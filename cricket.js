@@ -4,7 +4,6 @@ let score = JSON.parse(scoreStr) || {
   tie: 0,
   lost: 0,
 };
-
 function displayScore() {
   return `won:${score.win} lost:${score.lost} tie:${score.tie}`;
 }
@@ -16,12 +15,19 @@ function resetScore(scoreStr) {
         tie: 0,
         lost: 0,
       };
+      showResult();
 }
 function showResult(userChoice, computerChoice, resultMsg) {
   localStorage.setItem("score", JSON.stringify(score));
-  alert(`You chose ${userChoice}\nComputer chose ${computerChoice}\n${resultMsg}
-       ${displayScore()} `);
-  console.log(score);
+  document.querySelector('#user-move').innerText=userChoice?`You have chosen ${userChoice}`:``;
+  document.querySelector('#computer-move').innerText=computerChoice?`computer have chosen ${computerChoice}`:'  '; 
+  document.querySelector('#result').innerText=resultMsg ||'';
+  document.querySelector('#score').innerText=`${displayScore()}`;
+
+
+  //alert(`You chose ${userChoice}\nComputer chose ${computerChoice}\n${resultMsg}
+     //  ${displayScore()} `);
+  //console.log(score);
 }
 function playGame(userChoice) {
  
