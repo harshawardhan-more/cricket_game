@@ -24,10 +24,6 @@ function showResult(userChoice, computerChoice, resultMsg) {
   document.querySelector('#result').innerText=resultMsg ||'';
   document.querySelector('#score').innerText=`${displayScore()}`;
 
-
-  //alert(`You chose ${userChoice}\nComputer chose ${computerChoice}\n${resultMsg}
-     //  ${displayScore()} `);
-  //console.log(score);
 }
 function playGame(userChoice) {
  
